@@ -1,0 +1,17 @@
+name: Validate Conventional Commits
+
+on:
+  push:
+    branches:
+      - 'features/*'
+      - 'hotfix/*'
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Conventional Commits
+        uses: wagoid/commitlint-github-action@v4
