@@ -3,7 +3,10 @@ name: Issues branch
 on:
   issues:
     types: [assigned]
-
+    
+permissions:
+  contents: write
+  
 jobs:
   create_branch:
     runs-on: ubuntu-latest
