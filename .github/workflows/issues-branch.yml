@@ -12,8 +12,8 @@ jobs:
         run: |
           ISSUE_NUMBER=${{ github.event.issue.number }}
           BRANCH_NAME="feature/issue-${ISSUE_NUMBER}"
+          echo "1"
           git fetch origin develop
           git checkout develop
-          echo "1"
           git checkout -b $BRANCH_NAME
           git push origin $BRANCH_NAME
