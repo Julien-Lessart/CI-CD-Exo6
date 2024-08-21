@@ -8,7 +8,7 @@ on:
 jobs:
   delete_branch:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'features/')
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'feature/')
 
     steps:
       - name: Delete branch
