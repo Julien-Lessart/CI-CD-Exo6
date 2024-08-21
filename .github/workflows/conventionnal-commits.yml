@@ -3,7 +3,7 @@ name: Validate Conventional Commits
 on:
   push:
     branches:
-      - 'features/*'
+      - 'feature/*'
       - 'hotfix/*'
 
 jobs:
