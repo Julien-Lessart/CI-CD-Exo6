@@ -8,6 +8,11 @@ jobs:
   create_branch:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: develop
+        
     - name: Set up Git user
       run: |
         git config --global user.name "github-actions[bot]"
