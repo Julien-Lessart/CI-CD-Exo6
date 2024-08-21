@@ -6,8 +6,8 @@ on:
       - 'feature/*'
       - 'hotfix/*'
       
-permissions:
-  contents: read
+#permissions:
+#  contents: read
   
 jobs:
   commitlint:
