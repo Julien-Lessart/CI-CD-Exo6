@@ -2,8 +2,6 @@ name: Test Workflow
 
 on:
   push:
-    branches:
-      - 'feature/**'
 
 jobs:
   test:
