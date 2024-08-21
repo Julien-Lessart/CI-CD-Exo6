@@ -14,5 +14,6 @@ jobs:
           BRANCH_NAME="feature/issue-${ISSUE_NUMBER}"
           git fetch origin develop
           git checkout develop
+          echo "1"
           git checkout -b $BRANCH_NAME
           git push origin $BRANCH_NAME
