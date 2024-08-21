@@ -3,8 +3,8 @@ name: Validate Conventional Commits
 on:
   push:
     branches:
-      - 'feature/*'
-      - 'hotfix/*'
+      - 'feature/**'
+      - 'hotfix/**'
       
 #permissions:
 #  contents: read
