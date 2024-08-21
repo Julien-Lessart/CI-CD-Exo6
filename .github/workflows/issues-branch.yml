@@ -8,12 +8,19 @@ jobs:
   create_branch:
     runs-on: ubuntu-latest
     steps:
-      - name: Create branch from issue
-        run: |
-          ISSUE_NUMBER=${{ github.event.issue.number }}
-          BRANCH_NAME="feature/issue-${ISSUE_NUMBER}"
-          echo "1"
-          git fetch origin develop
-          git checkout develop
-          git checkout -b $BRANCH_NAME
-          git push origin $BRANCH_NAME
+    - name: Set up Git user
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Create branch from issue
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        ISSUE_NUMBER=${{ github.event.issue.number }}
+        BRANCH_NAME="feature/issue-${ISSUE_NUMBER}"
+        echo "1"
+        git fetch origin develop
+        git checkout develop
+        git checkout -b $BRANCH_NAME
+        git push origin $BRANCH_NAME
