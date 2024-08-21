@@ -1,0 +1,18 @@
+name: Issues branch
+
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create branch from issue
+        run: |
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          BRANCH_NAME="feature/issue-${ISSUE_NUMBER}"
+          git fetch origin develop
+          git checkout develop
+          git checkout -b $BRANCH_NAME
+          git push origin $BRANCH_NAME
