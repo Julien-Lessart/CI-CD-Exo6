@@ -2,7 +2,7 @@ name: Conventional Commits
 
 on:
   push:
-    branches: 'feature/issue-1'
+    branches:  [feature/*]
 
 jobs:
   build:
